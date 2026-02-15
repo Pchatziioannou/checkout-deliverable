@@ -4,8 +4,10 @@ import com.checkout.payment.gateway.model.PostPaymentResponse;
 import java.util.HashMap;
 import java.util.Optional;
 import java.util.UUID;
+import lombok.Getter;
 import org.springframework.stereotype.Repository;
 
+@Getter
 @Repository
 public class PaymentsRepository {
 

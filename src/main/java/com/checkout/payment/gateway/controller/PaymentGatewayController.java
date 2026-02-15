@@ -28,10 +28,10 @@ public class PaymentGatewayController {
   }
   @PostMapping("/payment")
   public ResponseEntity<PostPaymentResponse> processPayment(@RequestBody PostPaymentRequest paymentRequest) {
-    PostPaymentResponse  response = paymentGatewayService.processPayment(paymentRequest);
-    if( response.getStatus() == PaymentStatus.REJECTED){
+    PostPaymentResponse response = paymentGatewayService.processPayment(paymentRequest);
+    if (response.getStatus() == PaymentStatus.REJECTED) {
       return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
-    return new ResponseEntity<>(paymentGatewayService.processPayment(paymentRequest), HttpStatus.OK);
+    return new ResponseEntity<>(response, HttpStatus.OK);
   }
 }
